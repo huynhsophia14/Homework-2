@@ -1,1 +1,27 @@
+# Prompt the user to enter the list elements separated by spaces
+input_string = input("Enter the elements of the list separated by spaces: ")
+
+# Split the input string into a list
+user_list = input_string.split()
+
+# Convert each element to the desired type (e.g., int, float, str)
+# Here, converting elements to integers and get its length
+user_list = [int(element) for element in user_list]
+n = len(user_list)
+
+# Prompt the user to enter k
+k = input("Enter the size of slicing window: ")
+k = int(k)
+
+#Create a temporary list to store the k numbers sliced from input list abd output list
+list_tmp = []
+output=[]
+
+#The numbers of moving times over user_list is (n-k+1), loop over it and slice k elements of user list into tmp_list, then determine its max and append into output
+for i in range(n-k+1):
+    list_tmp = [int(element) for element in user_list[i:i+k]]
+    output.append(max(list_tmp))
+
+print("Output:", output)
+
 
